@@ -1,3 +1,4 @@
+/* Needed CSS */
 #sidebar {
   position: absolute;
   width: 300px;
@@ -5,7 +6,6 @@
   top: 0;
   right: 0;
   bottom: 0;
-
   overflow: hidden;
 }
 
@@ -13,23 +13,91 @@
   overflow: scroll;
   width: 100%;
   height: 100%;
-}
-
-.section {
-
+  position: relative;
+  z-index:400;
 }
 
 .section > h3 {
   margin: 0;
-  padding: 4px 10px;
-  font-size: 14px;
-  height: 20px;
-
+  z-index:600;
+  
   background: black;
-  color: #fff;
+  color: white;
 }
 
-.snapHeader {
+.snap {
   width:100%;
   position:fixed;
+}
+
+/* Theming */
+
+.webflow {
+  padding: 20px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0d…0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+  background-image: -webkit-linear-gradient(left,rgba(153,93,179,0.6),rgba(44,155,219,0.6));
+  background-image: -moz-linear-gradient(left,rgba(153,93,179,0.6),rgba(44,155,219,0.6));
+  background-image: -o-linear-gradient(left,rgba(153,93,179,0.6),rgba(44,155,219,0.6));
+  background-image: linear-gradient(to right,rgba(153,93,179,0.6),rgba(44,155,219,0.6));
+  color: #efceff;
+}
+
+.webflow img {
+  width: 100px;
+}
+
+body {
+  background:#262626;
+  color: #bcbcbc;
+}
+
+#sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #171717;
+  border-left: 1px solid #000;
+  padding: 0;
+  font-family: Arial;
+  font-size: 11px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.section > h3 {
+  padding: 8px 4px;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-top: 1px solid #3a3a3a;
+  border-bottom: 1px solid #1f1f1f;
+  background: #242424;
+  color: #b1b1b1;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 #000;
+  display: block;
+  font-weight: 700;
+  margin: 0;
+  cursor: pointer;
+}
+
+.body {
+  background-color: #333;
+}
+
+.body p {
+  line-height: 16px;
+  padding: 8px;
+  margin: 0;
+}
+
+#home {
+  margin-right: 240px;
+}
+#home p {
+  padding: 20px;
 }
