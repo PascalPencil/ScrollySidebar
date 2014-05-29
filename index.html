@@ -9,6 +9,28 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/scrolly.css">
+  <style>
+  .section h3 {
+    height: 20px;
+    margin: 0;
+    padding: 8px 10px 5px;
+  }
+  .snapTop {
+    width:100%;
+    top:0;
+    position:fixed;
+  }
+  .snapped {
+    padding-top: 33px;
+  }
+  .section.one h3.snapTop {top:0px;}
+  .section.two h3.snapTop {top:33px;}
+  .section.three h3.snapTop {top:66px;}
+  .section.four h3.snapTop {top:99px;}
+  .section.five h3.snapTop {top:132px;}
+  .section.six h3.snapTop {top:165px;}
+  
+  </style>
 </head>
 <body>
   <div id="sidebar">
@@ -62,5 +84,21 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
 
   <script src="js/scrolly.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.scroll-pane').scroll(function(){
+      $('.section').each(function(){
+        var posTop = $('#sidebar').scrollTop() - $(this).offset().top;
+        if (posTop >= 0) {
+          $('h3', this).addClass('snapTop');
+          $('h3', this).siblings().addClass('snapped');
+        } else {
+          $('h3', this).removeClass('snapTop');
+          $('h3', this).siblings().removeClass('snapped');
+        }
+      });
+    }).trigger('scroll');
+  });
+  </script>
 </body>
 </html>
