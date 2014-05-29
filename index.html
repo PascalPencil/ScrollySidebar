@@ -85,17 +85,13 @@
         var posTop = $(this).position().top;
         var posBottom = $(this).offset().top + headerHeight;
         if (posTop <= elementCountTop) {
-          $('h3', this).addClass('snapHeader').css('top', elementCountTop+'px');
+          $('h3', this).addClass('snapHeader').css({'bottom': 'inherit', 'top': elementCountTop+'px'});
+          $('h3', this).siblings().css('padding-top', headerHeight+'px');
+        } else if (posBottom >= parentHeight) {
+          $('h3', this).addClass('snapHeader').css({'top': 'inherit', 'bottom': elementCountBottom+'px'});
           $('h3', this).siblings().css('padding-top', headerHeight+'px');
         } else {
-          $('h3', this).removeClass('snapHeader').css('top', 'inherit');
-          $('h3', this).siblings().css('padding-top', 'inherit');
-        }
-        if (posBottom >= parentHeight) {
-          $('h3', this).addClass('snapHeader').css('bottom', elementCountBottom+'px');
-          $('h3', this).siblings().css('padding-top', headerHeight+'px');
-        } else {
-          $('h3', this).removeClass('snapHeader').css('bottom', 'inherit');
+          $('h3', this).removeClass('snapHeader').css({'bottom': 'inherit', 'top': 'inherit'});
           $('h3', this).siblings().css('padding-top', 'inherit');
         }
         elementCountTop+=headerHeight;
