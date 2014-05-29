@@ -1,0 +1,30 @@
+#sidebar {
+  position: absolute;
+  width: 300px;
+  background: #999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: hidden;
+}
+
+.scroll-pane {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+
+}
+
+.section > h3 {
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 14px;
+  height: 20px;
+
+  background: black;
+  color: #fff;
+}
