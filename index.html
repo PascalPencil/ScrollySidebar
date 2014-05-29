@@ -82,11 +82,11 @@
       var elementCount = 0;
       $('.section').each(function(){
         var posTop = $('#sidebar').scrollTop() - $(this).offset().top;
-        if (posTop >= elementCount) {
+        if (posTop >= (0 - elementCount)) {
           $('h3', this).addClass('snapTop').css('top', elementCount+'px');
           $('h3', this).siblings().addClass('snapped');
         } else {
-          $('h3', this).removeClass('snapTop');
+          $('h3', this).removeClass('snapTop').css('top', '');
           $('h3', this).siblings().removeClass('snapped');
         }
         elementCount+=33;
