@@ -14,62 +14,97 @@
   <div id="home">
     <div class="webflow">
       <img src="img/logo.png"/><br>
-      Scrolly plugin
+      <h1>Scrolly plugin</h1>
+      by <a href="http://superpencil.com">Pascal Verstegen</a>
     </div>
-    <p class="home">
-      <b>Features:</b>
+    <div class="features">
+      <h2>Features:</h2>
       <ul>
         <li>Sticks section headers to their parent's div edges top or bottom on overflow</li>
-        <!-- <li>Supports DOM injection (Section 7 is loaded in 2 sec)</li> -->
-        <li>Clicking Section title smooth scrolls it to the top</li>
         <li>All heights of sections, headers, and sidebar are flexible</li>
+        <li>Clicking Section title smooth scrolls it to the top</li>
         <li>Supports window resizing</li>
         <li>Matching Webflow UI</li>
+        <li>Ticks collapse item, name links to it</li>
+        <li>Supports DOM injection (Section 7 is loaded in 2 sec)</li>
       </ul>
-    </p>
+    </div>
   </div>
   <div id="sidebar">
-    <div class="scroll-pane">
-      <div class="section one">
-        <h3>Section 1</h3>
-        <div class="body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+    <div class="tabs"><a href="#" data-tip="text: &quot;Add (A)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: addTab.visible() }, click: addTab.show" class="tab add-tab show-tip active"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Style (S)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: styleTab.visible() }, click: styleTab.show" class="tab style-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Settings (D)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: settingsTab.visible() }, click: settingsTab.show" class="tab settings-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Navigator (F)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: navigatorTab.visible() }, click: navigatorTab.show" class="tab navigator-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Style Manager&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: allStylesTab.visible() }, click: allStylesTab.show" class="tab all-styles-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Asset Manager&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: assetsTab.visible() }, click: assetsTab.show" class="tab assets-tab show-tip"><span class="sprite-mid"><i></i></span></a></div>
+    <div class="scroll-pane-wrap">
+      <div class="scroll-pane">
+        <div class="section one">
+          <h4 class="title">
+            <a href="#" class="label">
+              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 1</span>
+              <i class="status sprite-main"></i>
+            </a>
+          </h4>
+          <div class="body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+          </div>
         </div>
-      </div>
-      <div class="section two">
-        <h3>Section 2</h3>
-        <div class="body">
-          <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-
-          <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+        <div class="section two">
+          <h4 class="title">
+            <a href="#" class="label">
+              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 2</span>
+              <i class="status sprite-main"></i>
+            </a>
+          </h4>
+          <div class="body">
+            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+  
+            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+          </div>
         </div>
-      </div>
-      <div class="section three">
-        <h3>Section 3</h3>
-        <div class="body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+        <div class="section three">
+          <h4 class="title">
+            <a href="#" class="label">
+              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 3</span>
+              <i class="status sprite-main"></i>
+            </a>
+          </h4>
+          <div class="body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+          </div>
         </div>
-      </div>
-      <div class="section four">
-        <h3>Section 4</h3>
-        <div class="body">
-          <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-
-          <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+        <div class="section four">
+          <h4 class="title">
+            <a href="#" class="label">
+              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 4</span>
+              <i class="status sprite-main"></i>
+            </a>
+          </h4>
+          <div class="body">
+            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+  
+            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+          </div>
         </div>
-      </div>
-      <div class="section five">
-        <h3>Section 5</h3>
-        <div class="body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+        <div class="section five">
+          <h4 class="title">
+            <a href="#" class="label">
+              <div class="tick sprite-mid"><i></i></div> <span class="link">Section 5</span>
+              <i class="status sprite-main"></i>
+            </a>
+          </h4>
+          <div class="body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+          </div>
         </div>
-      </div>
-      <div class="section six">
-        <h3>Section 6</h3>
-        <div class="body">
-          <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-
-          <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+        <div class="section six">
+          <h4 class="title">
+            <a href="#" class="label">
+              <div class="tick sprite-mid"><i></i></div> <span class="link">Section 6</span>
+              <i class="status sprite-main"></i>
+            </a>
+          </h4>
+          <div class="body">
+            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+  
+            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
+          </div>
         </div>
       </div>
     </div>
