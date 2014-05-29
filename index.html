@@ -17,19 +17,11 @@
   }
   .snapTop {
     width:100%;
-    top:0;
     position:fixed;
   }
   .snapped {
     padding-top: 33px;
   }
-  .section.one h3.snapTop {top:0px;}
-  .section.two h3.snapTop {top:33px;}
-  .section.three h3.snapTop {top:66px;}
-  .section.four h3.snapTop {top:99px;}
-  .section.five h3.snapTop {top:132px;}
-  .section.six h3.snapTop {top:165px;}
-  
   </style>
 </head>
 <body>
@@ -87,15 +79,17 @@
   <script>
   $(document).ready(function() {
     $('.scroll-pane').scroll(function(){
+      var elementCount = 0;
       $('.section').each(function(){
         var posTop = $('#sidebar').scrollTop() - $(this).offset().top;
-        if (posTop >= 0) {
-          $('h3', this).addClass('snapTop');
+        if (posTop >= elementCount) {
+          $('h3', this).addClass('snapTop').css('top', elementCount+'px');
           $('h3', this).siblings().addClass('snapped');
         } else {
           $('h3', this).removeClass('snapTop');
           $('h3', this).siblings().removeClass('snapped');
         }
+        elementCount+=33;
       });
     }).trigger('scroll');
   });
