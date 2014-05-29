@@ -15,12 +15,9 @@
     margin: 0;
     padding: 8px 10px 5px;
   }
-  .snapTop {
+  .snapHeader {
     width:100%;
     position:fixed;
-  }
-  .snapped {
-    padding-top: 33px;
   }
   </style>
 </head>
@@ -79,17 +76,30 @@
   <script>
   $(document).ready(function() {
     $('.scroll-pane').scroll(function(){
-      var elementCount = 0;
+      var sectionAmount = $('#sidebar .section').length;
+      var headerHeight = $('#sidebar .section h3').outerHeight();
+      var elementCountBottom = sectionAmount * headerHeight - headerHeight;
+      var elementCountTop = 0;
       $('.section').each(function(){
-        var posTop = $('#sidebar').scrollTop() - $(this).offset().top;
-        if (posTop >= (0 - elementCount)) {
-          $('h3', this).addClass('snapTop').css('top', elementCount+'px');
-          $('h3', this).siblings().addClass('snapped');
+        var parentHeight = $(this).parent().outerHeight() - elementCountBottom;
+        var posTop = $(this).position().top;
+        var posBottom = $(this).offset().top + headerHeight;
+        if (posTop <= elementCountTop) {
+          $('h3', this).addClass('snapHeader').css('top', elementCountTop+'px');
+          $('h3', this).siblings().css('padding-top', headerHeight+'px');
         } else {
-          $('h3', this).removeClass('snapTop').css('top', '');
-          $('h3', this).siblings().removeClass('snapped');
+          $('h3', this).removeClass('snapHeader').css('top', 'inherit');
+          $('h3', this).siblings().css('padding-top', 'inherit');
         }
-        elementCount+=33;
+        if (posBottom >= parentHeight) {
+          $('h3', this).addClass('snapHeader').css('bottom', elementCountBottom+'px');
+          $('h3', this).siblings().css('padding-top', headerHeight+'px');
+        } else {
+          $('h3', this).removeClass('snapHeader').css('bottom', 'inherit');
+          $('h3', this).siblings().css('padding-top', 'inherit');
+        }
+        elementCountTop+=headerHeight;
+        elementCountBottom-=headerHeight;
       });
     }).trigger('scroll');
   });
