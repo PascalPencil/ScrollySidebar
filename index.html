@@ -9,17 +9,6 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/scrolly.css">
-  <style>
-  .section h3 {
-    height: 20px;
-    margin: 0;
-    padding: 8px 10px 5px;
-  }
-  .snapHeader {
-    width:100%;
-    position:fixed;
-  }
-  </style>
 </head>
 <body>
   <div id="sidebar">
@@ -73,32 +62,5 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
 
   <script src="js/scrolly.js"></script>
-  <script>
-  $(document).ready(function() {
-    $('.scroll-pane').scroll(function(){
-      var sectionAmount = $('#sidebar .section').length;
-      var headerHeight = $('#sidebar .section h3').outerHeight();
-      var elementCountBottom = sectionAmount * headerHeight - headerHeight;
-      var elementCountTop = 0;
-      $('.section').each(function(){
-        var parentHeight = $(this).parent().outerHeight() - elementCountBottom;
-        var posTop = $(this).position().top;
-        var posBottom = $(this).offset().top + headerHeight;
-        if (posTop <= elementCountTop) {
-          $('h3', this).addClass('snapHeader').css({'bottom': 'inherit', 'top': elementCountTop+'px'});
-          $('h3', this).siblings().css('padding-top', headerHeight+'px');
-        } else if (posBottom >= parentHeight) {
-          $('h3', this).addClass('snapHeader').css({'top': 'inherit', 'bottom': elementCountBottom+'px'});
-          $('h3', this).siblings().css('padding-top', headerHeight+'px');
-        } else {
-          $('h3', this).removeClass('snapHeader').css({'bottom': 'inherit', 'top': 'inherit'});
-          $('h3', this).siblings().css('padding-top', 'inherit');
-        }
-        elementCountTop+=headerHeight;
-        elementCountBottom-=headerHeight;
-      });
-    }).trigger('scroll');
-  });
-  </script>
 </body>
 </html>
