@@ -12,11 +12,10 @@
   <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-  <div id="home">
-    <div class="webflow">
-      <img src="img/logo.png"/><br>
+  <div id="features">
+    <div class="superpencil">
+      <a href="http://superpencil.com"><img src="img/superpencil.svg"/></a>
       <h1>Scrolly plugin</h1>
-      by <a href="http://superpencil.com">Pascal Verstegen</a>
     </div>
     <div class="features">
       <h2>Features:</h2>
@@ -38,89 +37,73 @@
     </div>
   </div>
   <div id="sidebar">
-    <div class="tabs"><a href="#" data-tip="text: &quot;Add (A)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: addTab.visible() }, click: addTab.show" class="tab add-tab show-tip active"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Style (S)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: styleTab.visible() }, click: styleTab.show" class="tab style-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Settings (D)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: settingsTab.visible() }, click: settingsTab.show" class="tab settings-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Navigator (F)&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: navigatorTab.visible() }, click: navigatorTab.show" class="tab navigator-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Style Manager&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: allStylesTab.visible() }, click: allStylesTab.show" class="tab all-styles-tab show-tip"><span class="sprite-mid"><i></i></span></a><a href="#" data-tip="text: &quot;Asset Manager&quot;, dir: bottom, hideWhen: active, hideOn: click" data-bind="css: { &quot;active&quot;: assetsTab.visible() }, click: assetsTab.show" class="tab assets-tab show-tip"><span class="sprite-mid"><i></i></span></a></div>
-    <div class="scroll-pane-wrap">
-      <div class="scroll-pane">
-        <div class="section one">
-          <h4 class="title">
-            <a href="#" class="label">
-              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 1</span>
-              <i class="status sprite-main"></i>
-            </a>
-          </h4>
-          <div class="body">
-            <p>
+    <div class="scroll-pane">
+      <div class="section">
+        <a href="#" class="header">
+          <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 1</span>
+        </a>
+        <div class="body">
+          <p>
+            <a class="button" href="#">+ Add section</a>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.
+          </p>
+        </div>
+      </div>
+      <div class="section collapsed">
+        <a href="#" class="header">
+          <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 2</span>
+        </a>
+        <div class="body" style="display: none">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <a href="#" class="header">
+          <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 3</span>
+        </a>
+        <div class="body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <a href="#" class="header">
+          <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 4</span>
+        </a>
+        <div class="body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <a href="#" class="header">
+          <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 5</span>
+        </a>
+        <div class="body">
+          <p>
             <a class="button" href="#">+ Block button</a>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
-          </div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.
+          </p>
         </div>
-        <div class="section two">
-          <h4 class="title">
-            <a href="#" class="label">
-              <div class="tick sprite-mid ticked"><i></i></div>  <span class="link">Section 2</span>
-              <i class="status sprite-main"></i>
-            </a>
-          </h4>
-          <div class="body" style="display:none;">
-            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-
-            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-          </div>
-        </div>
-        <div class="section three">
-          <h4 class="title">
-            <a href="#" class="label">
-              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 3</span>
-              <i class="status sprite-main"></i>
-            </a>
-          </h4>
-          <div class="body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
-          </div>
-        </div>
-        <div class="section four">
-          <h4 class="title">
-            <a href="#" class="label">
-              <div class="tick sprite-mid"><i></i></div>  <span class="link">Section 4</span>
-              <i class="status sprite-main"></i>
-            </a>
-          </h4>
-          <div class="body">
-            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-
-            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-          </div>
-        </div>
-        <div class="section five">
-          <h4 class="title">
-            <a href="#" class="label">
-              <div class="tick sprite-mid"><i></i></div> <span class="link">Section 5</span>
-              <i class="status sprite-main"></i>
-            </a>
-          </h4>
-          <div class="body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
-          </div>
-        </div>
-        <div class="section six">
-          <h4 class="title">
-            <a href="#" class="label">
-              <div class="tick sprite-mid"><i></i></div> <span class="link">Section 6</span>
-              <i class="status sprite-main"></i>
-            </a>
-          </h4>
-          <div class="body">
-            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-
-            <p>Maecenas accumsan nec est semper scelerisque. Fusce et leo sit amet ligula dignissim porta. Donec et neque vitae nisi euismod fermentum. Ut ut libero faucibus, facilisis dui id, condimentum orci. Quisque at nisi eget erat cursus eleifend nec convallis felis. Aenean molestie at odio et tempor.</p>
-          </div>
+      </div>
+      <div class="section">
+        <a href="#" class="header">
+          <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 6</span>
+        </a>
+        <div class="body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
+  <script src="js/vendor/jquery-1.11.0.js"></script>
   <script src="js/vendor/jquery.mousewheel.min.js"></script>
   <script src="js/scrolly.js"></script>
 </body>
