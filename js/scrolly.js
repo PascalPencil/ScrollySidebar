@@ -1,26 +1,7 @@
 $(document).ready(function() {
-  
-  function Clicker() {
-    //Calculate .section header height
-    var headerHeight = $('#sidebar .section h4').outerHeight();
-    
-    //Get amount of sections
-    var sectionAmount = $('#sidebar .section').length;
-    
-    //Smooth scrolling to section
-    $('.section').each(function(i) {
-      //Get element position relative to top of sidebar, minus previous sections' headers heights
-      var pos = $(this).position().top - (i * headerHeight);
-      //Onclick scroll to specified height
-      $('.link', this).click(function() {
-        //Animate to div
-        $('.scroll-pane').animate({
-          scrollTop: pos
-        }, 600);
-      });
-      /* $('h4', this).html(pos); */
-    });
-  }
+
+  //Calculate .section header height
+  var headerHeight = $('#sidebar .section h4').outerHeight();
   
   //Load as function to support DOM injection
   function Scroller() {
@@ -29,15 +10,16 @@ $(document).ready(function() {
     var scrollTop = $(window).scrollTop();
     var elementOffset = $('.scroll-pane').offset().top;
     var fixedTop = (elementOffset - scrollTop);
-  
-    //Calculate .section header height
-    var headerHeight = $('#sidebar .section h4').outerHeight();
+
+    //Set section's minheight so scroll is smooth when collapsed bodies
+    $('.section').css('min-height', headerHeight);
     
     //Get amount of sections
     var sectionAmount = $('#sidebar .section').length;
     
     //Full height of all elements if stacked on bottom, minus one
     var elementCountBottom = sectionAmount * headerHeight - headerHeight;
+    
     //Each section do, integer starts at 0 to calculate stacking of headers on top
     $('.section').each(function(i) {
       //Calculate visible .scroll-pane height
@@ -74,13 +56,27 @@ $(document).ready(function() {
     });
   }
   
+  //ScrollTo
+  $('.section .title').click(function() {
+    //Current amount of scroll
+    var scrolled = $('.scroll-pane').scrollTop();
+    //Get section number
+    var sectionNumber = $(this).closest('.section').index();
+    //Linenumber to push properly from top
+    var lineNumber = sectionNumber * headerHeight;
+    //Animate to div
+    var topPosition = scrolled + $(this).closest('.section').position().top - lineNumber;
+    $('.scroll-pane').animate({scrollTop: topPosition});
+  });
+  
+  //If tick is clicked collapse section and update sidebar
   $('.section .tick').click(function(){
     $(this).closest('.section').children('.body').toggle();
     $(this).toggleClass('ticked');
+    Scroller();
   });
   
-  //Call plugins
-  Clicker();
+  //Call plugin
   Scroller();
   
   //Call plugin on scroll in the .scroll-pane
@@ -89,16 +85,14 @@ $(document).ready(function() {
   }).trigger('scroll');
   
   //Call plugin on window resizing
-  window.onresize = function(event) {
+  window.onresize = function() {
     Scroller();
   };
   
   //DOM injecting Section Seven after 5 seconds for demo purposes
-  /*
-setTimeout(function() {
+  setTimeout(function() {
     $('.scroll-pane').append("<div class=\"section seven\"><h4 class=\"title\"><a href=\"#\" class=\"label\"><div class=\"tick sprite-mid\"><i></i></div> Section 7<i class=\"status sprite-main\"></i></a></h4><div class=\"body\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.<\/p><\/div><\/div>");
     //Call the functions to reload the sidebar
     Scroller();
   }, 2000);
-*/
 });

@@ -293,5 +293,7 @@ opacity: 0.7;
 
 .title>a.label>.ticked>i {
 background-position: -40px 0;
+height: 8px;
+margin: 4px 0 0 2px;
 }
 
