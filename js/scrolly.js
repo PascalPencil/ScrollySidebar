@@ -64,7 +64,7 @@ $(document).ready(function() {
   }
 
   //ScrollTo
-  $('.section').on( "click", ".snap", function() {
+  $('.snap').on( "click", ".link", function() {
     $(this).siblings().show();
     $(this).find('.tick').removeClass('ticked');
     //Current amount of scroll
@@ -78,6 +78,7 @@ $(document).ready(function() {
     $('.scroll-pane').animate({
       scrollTop: topPosition
     });
+    Scroller();
   });
 
   //If tick is clicked collapse section and update sidebar
