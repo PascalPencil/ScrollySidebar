@@ -1,11 +1,18 @@
 $(document).ready(function() {
 
+  //Bind scroll event so still scrollable even if under fixed divs
+  $('.scroll-pane').bind('mousewheel', function(event) {
+    event.preventDefault();
+    var scrollTop = this.scrollTop;
+    this.scrollTop = (scrollTop + ((event.deltaY * event.deltaFactor) * -1));
+  });
+
   //Calculate .section header height
   var headerHeight = $('#sidebar .section h4').outerHeight();
-  
+
   //Load as function to support DOM injection
   function Scroller() {
-  
+
     //Calculate position of top of div for flexible layout
     var scrollTop = $(window).scrollTop();
     var elementOffset = $('.scroll-pane').offset().top;
@@ -13,13 +20,13 @@ $(document).ready(function() {
 
     //Set section's minheight so scroll is smooth when collapsed bodies
     $('.section').css('min-height', headerHeight);
-    
+
     //Get amount of sections
     var sectionAmount = $('#sidebar .section').length;
-    
+
     //Full height of all elements if stacked on bottom, minus one
     var elementCountBottom = sectionAmount * headerHeight - headerHeight;
-    
+
     //Each section do, integer starts at 0 to calculate stacking of headers on top
     $('.section').each(function(i) {
       //Calculate visible .scroll-pane height
@@ -55,7 +62,7 @@ $(document).ready(function() {
       elementCountBottom -= headerHeight;
     });
   }
-  
+
   //ScrollTo
   $('.section .link').click(function() {
     $(this).closest('.section').children('.body').show();
@@ -68,29 +75,31 @@ $(document).ready(function() {
     var lineNumber = sectionNumber * headerHeight;
     //Animate to div
     var topPosition = scrolled + $(this).closest('.section').position().top - lineNumber;
-    $('.scroll-pane').animate({scrollTop: topPosition});
+    $('.scroll-pane').animate({
+      scrollTop: topPosition
+    });
   });
-  
+
   //If tick is clicked collapse section and update sidebar
-  $('.section .tick').click(function(){
+  $('.section .tick').click(function() {
     $(this).closest('.section').children('.body').toggle();
     $(this).toggleClass('ticked');
     Scroller();
   });
-  
+
   //Call plugin
   Scroller();
-  
+
   //Call plugin on scroll in the .scroll-pane
   $('.scroll-pane').scroll(function() {
     Scroller();
   }).trigger('scroll');
-  
+
   //Call plugin on window resizing
   window.onresize = function() {
     Scroller();
   };
-  
+
   //DOM injecting Section Seven after 5 seconds for demo purposes
   setTimeout(function() {
     $('.scroll-pane').append("<div class=\"section seven\"><h4 class=\"title\"><a href=\"#\" class=\"label\"><div class=\"tick sprite-mid\"><i></i></div> Section 7<i class=\"status sprite-main\"></i></a></h4><div class=\"body\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.<\/p><\/div><\/div>");

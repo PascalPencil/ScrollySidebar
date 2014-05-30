@@ -27,11 +27,11 @@
         <li>Supports window resizing</li>
         <li>Matching Webflow UI</li>
         <li>Ticks collapse item, name links to it (Section 2 is collapsed on load)</li>
+        <li>Still scrollable if cursor hovers over fixed item by mousewheel capture</li>
         <li>Supports DOM injection (Section 7 is loaded in 2 sec on load)</li>
       </ul>
       <h2>To-Do:</h2>
       <ul>
-        <li>Replace scrolling with JS to support scrolling over fixed elements</li>
         <li>Clean code</li>
       </ul>
     </div>
@@ -48,7 +48,9 @@
             </a>
           </h4>
           <div class="body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
+            <p>
+            <a class="button" href="#">+ Block button</a>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p>
           </div>
         </div>
         <div class="section two">
@@ -118,7 +120,7 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
-
-  <script src="js/scrolly.js"></script>
+  <script src="js/vendor/jquery.mousewheel.min.js"></script>
+  <script src="js/scrolly.min.js"></script>
 </body>
 </html>

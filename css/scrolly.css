@@ -9,14 +9,6 @@
   overflow: hidden;
 }
 
-.scroll-pane {
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 400;
-}
-
 .scroll-pane-wrap {
   position: absolute;
   top: 0;
@@ -27,13 +19,25 @@
 
 .section > h4 {
   margin: 0;
-  z-index:600;
-  
   background: black;
   color: white;
+}
+
+.scroll-pane {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
 }
 
 .snap {
   width:100%;
   position:fixed;
+  z-index: 2;
+}
+
+.section > .body {
+  position: relative;
+  z-index: 1;
 }
