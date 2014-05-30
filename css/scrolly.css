@@ -1,6 +1,6 @@
 /* Needed CSS */
 #sidebar {
-  position: absolute;
+  position: fixed;
   width: 252px;
   background: #999;
   top: 0;

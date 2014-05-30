@@ -64,9 +64,9 @@ $(document).ready(function() {
   }
 
   //ScrollTo
-  $('.section .link').click(function() {
-    $(this).closest('.section').children('.body').show();
-    $(this).closest('.label').children('.tick').removeClass('ticked');
+  $('.section').on( "click", ".snap", function() {
+    $(this).siblings().show();
+    $(this).find('.tick').removeClass('ticked');
     //Current amount of scroll
     var scrolled = $('.scroll-pane').scrollTop();
     //Get section number

@@ -6,7 +6,7 @@ body {
   font-size: 12px;
   line-height: 150%;
   background-color: #2d2d2d;
-  background-image: url(https://d3e54v103j8qbb.cloudfront.net/gen/img/marketing/main-bg.jpg);
+  background-image: url(../img/main-bg.jpg);
   background-repeat: no-repeat;
   background-position: 50% top;
 }
@@ -200,8 +200,8 @@ border-bottom: 0;
 cursor: default;
 }
 
-.sprite-main, .sprite-mid>i, .el-icon, .kit-button>i, .general-settings .visibility .kit-button-big>i, .kit-field.compact .kit-label a.link>i, .offset-box .handle:before, .offset-box .handle:after, .kit-color-input>.preview>a.trigger:after, .kit-color-input.transparent>.preview>a.trigger, .kit-color-input.no-color>.preview>a.trigger:before, .kit-color-picker .handle, .css-selector .css-tokens .token>i.tag, .css-selector.compact>.path-chunks>.css-tokens:before, .select2-container>.select2-choice>div>b, .settings-tab .kit-radio-buttons.main-sprite>.kit-radio-button>i {
-  background-image: url(https://d3e54v103j8qbb.cloudfront.net/gen/img/sprites/main.72070e8dfb.png);
+.sprite-main, .sprite-mid>i, .el-icon, .kit-button>i, .general-settings .visibility .kit-button-big>i, .kit-field.compact .kit-label a.link>i, .offset-box .handle:before, .offset-box .handle:after, .kit-color-input>.preview>a.trigger:after, .kit-color-input.transparent>.preview>a.trigger, .kit-color-input.no-color>.preview>a.trigger:before {
+  background-image: url(../img/72070e8dfb.png);
   background-repeat: no-repeat;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -214,10 +214,6 @@ cursor: default;
 
 .sprite-mid>i {
   display: inline-block;
-}
-
-.sprite-colors {
-  background-image: url(https://d3e54v103j8qbb.cloudfront.net/gen/img/sprites/colors.66e4ab8fe1.png);
 }
 
 .title {
