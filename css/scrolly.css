@@ -1,0 +1,39 @@
+/* Needed CSS */
+#sidebar {
+  position: absolute;
+  width: 252px;
+  background: #999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.scroll-pane {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 400;
+}
+
+.scroll-pane-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.section > h4 {
+  margin: 0;
+  z-index:600;
+  
+  background: black;
+  color: white;
+}
+
+.snap {
+  width:100%;
+  position:fixed;
+}
