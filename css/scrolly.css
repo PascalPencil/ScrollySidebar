@@ -54,9 +54,11 @@
   display: none;
 }
 
-#sidebar .section.collapsed > .header > .tick {
+#sidebar .section.collapsed > .header > .tick,
+#sidebar .section > .snap > .tick {
   display: none;
 }
-#sidebar .section.collapsed > .header > .ticked {
+#sidebar .section.collapsed > .header > .ticked,
+#sidebar .section > .snap > .ticked {
   display: inline-block;
 }
