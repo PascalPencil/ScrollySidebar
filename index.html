@@ -31,20 +31,21 @@
       </ul>
       <h2>To-Do:</h2>
       <ul>
-        <li>Make slideToggle work smoothly in combination with updating the snapped elements</li>
+        <li>Make collapsing/showing section content smooth scroll work in combination with updating the snapped elements on bottom</li>
         <li>Clean code</li>
       </ul>
     </div>
   </div>
   <div id="sidebar">
     <div class="scroll-pane">
-      <div class="section">
+      <div class="section one">
         <a href="#" class="header">
           <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 1</span>
         </a>
         <div class="body">
           <p>
-            <a class="button" href="#">+ Add section</a>
+            <a class="button s1a" href="#">+ Inject Section 1a</a>
+            <a class="button s7" href="#">+ Inject Section 7</a>
             Culpa voluptate ullamco excepteur est nostrud tempor. Sint do ea sit eiusmod eu sit non commodo Lorem veniam. Officia nisi velit laboris adipisicing veniam nostrud nostrud nostrud adipisicing dolore culpa. Non et excepteur proident ea non reprehenderit nostrud.
           </p>
         </div>
@@ -59,7 +60,7 @@
           </p>
         </div>
       </div>
-      <div class="section">
+      <div class="section two">
         <a href="#" class="header">
           <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 3</span>
         </a>
@@ -69,7 +70,7 @@
           </p>
         </div>
       </div>
-      <div class="section">
+      <div class="section three">
         <a href="#" class="header">
           <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 4</span>
         </a>
@@ -79,7 +80,7 @@
           </p>
         </div>
       </div>
-      <div class="section">
+      <div class="section four">
         <a href="#" class="header">
           <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 5</span>
         </a>
@@ -89,7 +90,7 @@
           </p>
         </div>
       </div>
-      <div class="section">
+      <div class="section five">
         <a href="#" class="header">
           <span class="tick">&#9660;</span><span class="ticked">&#9654;</span>  <span class="link">Section 6</span>
         </a>
@@ -104,16 +105,24 @@
 
   <script src="js/vendor/jquery-1.11.0.js"></script>
   <script src="js/vendor/jquery.mousewheel.min.js"></script>
+  <script src="js/vendor/jquery.mutationobserver.js"></script>
   <script src="js/scrolly.js"></script>
   <script>
     $(document).ready(function() {
+      //Call Scrolly plugin
       Scrolly();
+
+      // Call plugin on DOM injections
+      $('.scroll-pane').mutationObserver(function(){Scrolly();});
     });
 
-    // DOM injecting Section Seven after 5 seconds for demo purposes
-    setTimeout(function(){
+    // DOM injecting sections demo
+    $('.s1a').click(function() {
+      $('.one').after("<div class=\"section\"><a href=\"#\" class=\"header\"><span class=\"tick\">&#9660;</span><span class=\"ticked\">&#9654;</span>  <span class=\"link\">Section 1a</span></a><div class=\"body\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p></div></div>");
+    });
+    $('.s7').click(function() {
       $('.scroll-pane').append("<div class=\"section\"><a href=\"#\" class=\"header\"><span class=\"tick\">&#9660;</span><span class=\"ticked\">&#9654;</span>  <span class=\"link\">Section 7</span></a><div class=\"body\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta ipsum a leo malesuada, sed aliquet justo eleifend. Sed vehicula pretium libero, id congue purus lobortis eget. Maecenas iaculis congue vehicula. Aliquam erat volutpat. Sed vitae facilisis nisi, nec scelerisque nulla. Maecenas a lacus euismod, tincidunt mauris at, sagittis tortor. Donec ullamcorper tortor arcu, a malesuada diam posuere id. Phasellus id ullamcorper quam.</p></div></div>");
-    }, 2000);
+    });
   </script>
 </body>
 </html>
