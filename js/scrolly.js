@@ -2,10 +2,10 @@
 function Scrolly() {
 
   // Calculate position of top of div for flexible layout
-  var fixedTop = $('.scroll-pane').offset().top - $(window).scrollTop();
+  var fixedTop = $('#sidebar .scroll-pane').offset().top - $(window).scrollTop();
 
   // Calculate .section header height
-  var headerHeight = $('#sidebar .section .header').outerHeight();
+  var headerHeight = $('#sidebar .header').outerHeight();
 
   // Get amount of sections
   var sectionAmount = $('#sidebar .section').length;
@@ -14,7 +14,7 @@ function Scrolly() {
   var elementCount = sectionAmount * headerHeight - headerHeight;
 
   // Each section do, integer starts at 0 to calculate stacking of headers on top
-  $('.section').each(function(i) {
+  $('#sidebar .section').each(function(i) {
 
     // Calculate visible .scroll-pane height
     var parentHeight = $(this).parent().outerHeight() - elementCount;
@@ -26,7 +26,7 @@ function Scrolly() {
     var posBottom = posTop + headerHeight;
 
     // If .section element touches top minus previous section headers, set position to absolute top
-    if (posTop <= (i * headerHeight)) {
+    if ((posTop + 1) <= (i * headerHeight)) {
       $('.header', this).addClass('snap').css({
         'bottom': 'inherit',
         'top': (i * headerHeight + fixedTop) + 'px'
@@ -60,17 +60,14 @@ function Scrolly() {
 
 $(document).ready(function() {
 
-  // Calculate position of top of div for flexible layout
-  var fixedTop = $('.scroll-pane').offset().top - $(window).scrollTop();
-
   // Calculate .section header height
   var headerHeight = $('#sidebar .section .header').outerHeight();
 
   // Set section's minheight so scrolling is smooth when sections are collapsed
-  $('.section').css('min-height', headerHeight);
+  $('#sidebar .section').css('min-height', headerHeight);
 
   // Header snapping
-  $('.scroll-pane').on("click", ".header", function() {
+  $('#sidebar .scroll-pane').on("click", ".header", function() {
 
     // If header isn't snapped, simply show or collapse section
     if (!$(this).hasClass('snap')) {
@@ -85,7 +82,7 @@ $(document).ready(function() {
       $(this).parent().removeClass('collapsed');
 
       // Current amount of scroll
-      var scrolled = $('.scroll-pane').scrollTop();
+      var scrolled = $('#sidebar .scroll-pane').scrollTop();
 
       // Get section number
       var sectionNumber = $(this).closest('.section').index();
@@ -95,7 +92,7 @@ $(document).ready(function() {
 
       // Animate to div
       var topPosition = scrolled + $(this).closest('.section').position().top - lineNumber;
-      $('.scroll-pane').animate({
+      $('#sidebar .scroll-pane').animate({
         scrollTop: topPosition
       });
     }
@@ -105,7 +102,7 @@ $(document).ready(function() {
   });
 
   // Call functionon scroll in the .scroll-pane
-  $('.scroll-pane').scroll(function() {
+  $('#sidebar .scroll-pane').scroll(function() {
     Scrolly();
   }).trigger('scroll');
 
@@ -115,7 +112,7 @@ $(document).ready(function() {
   };
 
   // Bind scroll event so still scrollable even if under fixed divs
-  $('.scroll-pane').bind('mousewheel', function(event) {
+  $('#sidebar .scroll-pane').bind('mousewheel', function(event) {
     event.preventDefault();
     var scrollTop = this.scrollTop;
     this.scrollTop = (scrollTop + ((event.deltaY * event.deltaFactor) * -1));

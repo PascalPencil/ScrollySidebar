@@ -1,3 +1,8 @@
+/* Demo CSS - Remove this and #superpencil in index.html content */
+#features {
+  display:none;
+}
+
 /* Needed CSS */
 #sidebar {
   position: fixed;
