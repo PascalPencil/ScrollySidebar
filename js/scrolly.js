@@ -70,7 +70,7 @@ $(document).ready(function() {
   $('.section').css('min-height', headerHeight);
 
   // Header snapping
-  $('.scroll-pane').on( "click", ".header", function() {
+  $('.scroll-pane').on("click", ".header", function() {
 
     // If header isn't snapped, simply show or collapse section
     if (!$(this).hasClass('snap')) {
@@ -105,10 +105,14 @@ $(document).ready(function() {
   });
 
   // Call functionon scroll in the .scroll-pane
-  $('.scroll-pane').scroll(function() { Scrolly(); }).trigger('scroll');
+  $('.scroll-pane').scroll(function() {
+    Scrolly();
+  }).trigger('scroll');
 
   // Call function on window resizing
-  window.onresize = function() { Scrolly(); };
+  window.onresize = function() {
+    Scrolly();
+  };
 
   // Bind scroll event so still scrollable even if under fixed divs
   $('.scroll-pane').bind('mousewheel', function(event) {
