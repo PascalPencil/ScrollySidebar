@@ -1,8 +1,10 @@
 # Scrolly plugin
 
-A scrollable sidebar with sections, the section headers stick to the top or bottom of the sidebar when scrolled out of view, and are clickable to expand.
+## A scrollable sidebar with sections, the section headers stick to the top or bottom of the sidebar when scrolled out of view, and are clickable to expand.
 
-## Features:
+![screenshot](https://dl.dropboxusercontent.com/u/898312/scrolly.png)
+
+### Features:
 
 *   Sticks section headers to their parent's div edges top or bottom on overflow
 *   All heights of sections, headers, and sidebar are flexible
@@ -13,7 +15,7 @@ A scrollable sidebar with sections, the section headers stick to the top or bott
 *   Still scrollable if cursor hovers over fixed item by mousewheel capture
 *   Supports DOM injection (Section 7 is loaded in 2 sec on load)
 
-## To-Do:
+### To-Do:
 
 *   Make collapsing/showing section content smooth scroll work in combination with updating the snapped elements on bottom
 *   Clean code
