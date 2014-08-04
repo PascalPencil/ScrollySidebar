@@ -1,5 +1,7 @@
 # Scrolly plugin
 
+A scrollable sidebar with sections, the section headers stick to the top or bottom of the sidebar when scrolled out of view, and are clickable to expand.
+
 ## Features:
 
 *   Sticks section headers to their parent's div edges top or bottom on overflow
