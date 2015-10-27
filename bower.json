@@ -24,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.10.0",
+    "jquery": ">= 1.10.0",
     "jquery-mousewheel": "3.1.11",
     "mutationobserver": "git://github.com/timbonicus/jquery-mutationobserver.git"
   }
