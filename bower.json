@@ -1,0 +1,25 @@
+{
+  "name": "Scrolly",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Superpencil/Scrolly",
+  "authors": [
+    "Pascal Verstegen <pascal@superpencil.com>"
+  ],
+  "description": "",
+  "main": "js/scrolly.js",
+  "moduleType": [],
+  "keywords": [
+    "scrolly",
+    "sidebar",
+    "scrolling",
+    "sidebar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
