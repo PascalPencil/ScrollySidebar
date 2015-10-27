@@ -39,43 +39,44 @@ scrollySidebar = ->
     elementCount -= headerHeight
 
 $(document).ready ->
-  # Calculate .section header height
-  headerHeight = $('#scrollysidebar .section .header').outerHeight()
-  # Set section's minheight so scrolling is smooth when sections are collapsed
-  $('#scrollysidebar .section').css 'min-height', headerHeight
-  # Header snapping
-  $('#scrollysidebar .scroll-pane').on 'click', '.header', ->
-    # If header isn't snapped, simply show or collapse section
-    if !$(this).hasClass('snap')
-      $(this).siblings().toggle()
-      $(this).parent().toggleClass 'collapsed'
-      # If header is snapped, clicking it will show section content and scroll section into view
-    else
-      # Uncollapse section
-      $(this).siblings().show()
-      $(this).parent().removeClass 'collapsed'
-      # Current amount of scroll
-      scrolled = $('#scrollysidebar .scroll-pane').scrollTop()
-      # Get section number
-      sectionNumber = $(this).closest('.section').index()
-      # Linenumber to push properly from top
-      lineNumber = sectionNumber * headerHeight
-      # Animate to div
-      topPosition = scrolled + $(this).closest('.section').position().top - lineNumber
-      $('#scrollysidebar .scroll-pane').animate scrollTop: topPosition
-    # Reset
-    scrollySidebar()
-  # Call functionon scroll in the .scroll-pane
-  $('#scrollysidebar .scroll-pane').scroll(->
-    scrollySidebar()
-  ).trigger 'scroll'
-  # Call function on window resizing
+  if $('#scrollysidebar').length
+    # Calculate .section header height
+    headerHeight = $('#scrollysidebar .section .header').outerHeight()
+    # Set section's minheight so scrolling is smooth when sections are collapsed
+    $('#scrollysidebar .section').css 'min-height', headerHeight
+    # Header snapping
+    $('#scrollysidebar .scroll-pane').on 'click', '.header', ->
+      # If header isn't snapped, simply show or collapse section
+      if !$(this).hasClass('snap')
+        $(this).siblings().toggle()
+        $(this).parent().toggleClass 'collapsed'
+        # If header is snapped, clicking it will show section content and scroll section into view
+      else
+        # Uncollapse section
+        $(this).siblings().show()
+        $(this).parent().removeClass 'collapsed'
+        # Current amount of scroll
+        scrolled = $('#scrollysidebar .scroll-pane').scrollTop()
+        # Get section number
+        sectionNumber = $(this).closest('.section').index()
+        # Linenumber to push properly from top
+        lineNumber = sectionNumber * headerHeight
+        # Animate to div
+        topPosition = scrolled + $(this).closest('.section').position().top - lineNumber
+        $('#scrollysidebar .scroll-pane').animate scrollTop: topPosition
+      # Reset
+      scrollySidebar()
+    # Call functionon scroll in the .scroll-pane
+    $('#scrollysidebar .scroll-pane').scroll(->
+      scrollySidebar()
+    ).trigger 'scroll'
+    # Call function on window resizing
 
-  window.onresize = ->
-    scrollySidebar()
+    window.onresize = ->
+      scrollySidebar()
 
-  # Bind scroll event so still scrollable even if under fixed divs
-  $('#scrollysidebar .scroll-pane').bind 'mousewheel', (event) ->
-    event.preventDefault()
-    scrollTop = @scrollTop
-    @scrollTop = scrollTop + event.deltaY * event.deltaFactor * -1
+    # Bind scroll event so still scrollable even if under fixed divs
+    $('#scrollysidebar .scroll-pane').bind 'mousewheel', (event) ->
+      event.preventDefault()
+      scrollTop = @scrollTop
+      @scrollTop = scrollTop + event.deltaY * event.deltaFactor * -1
