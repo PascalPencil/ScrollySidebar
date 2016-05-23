@@ -1,0 +1,31 @@
+{
+  "name": "scrollysidebar",
+  "version": "1.0.4",
+  "homepage": "https://github.com/Superpencil/Scrolly",
+  "authors": [
+    "Pascal Verstegen <pascal@superpencil.com>"
+  ],
+  "description": "",
+  "main": "dist/js/scrolly.js",
+  "moduleType": [],
+  "keywords": [
+    "scrollysidebar",
+    "scrolly",
+    "sidebar",
+    "scrolling",
+    "sidebar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.10.0",
+    "jquery-mousewheel": "3.1.11",
+    "mutationobserver": "git://github.com/timbonicus/jquery-mutationobserver.git"
+  }
+}
